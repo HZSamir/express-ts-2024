@@ -8,13 +8,13 @@
   "main": "index.ts",
   "private": true,
   "scripts": {
-    "dev": "tsx watch --clear-screen=false src/index.ts | pino-pretty",
+    "dev": "tsx watch --clear-screen=false api/index.ts | pino-pretty",
     "build": "tsup",
     "start": "node dist/index.js",
     "clean": "rimraf dist coverage",
-    "lint": "biome check src/",
-    "lint:fix": "biome check src/ --fix",
-    "format": "biome format src/",
+    "lint": "biome check api/",
+    "lint:fix": "biome check api/ --fix",
+    "format": "biome format api/",
     "test": "vitest run",
     "prepare": "husky"
   },
@@ -52,9 +52,10 @@
     "*.{js,ts,cjs,mjs,d.cts,d.mts,json,jsonc}": ["biome check --apply --no-errors-on-unmatched"]
   },
   "tsup": {
-    "entry": ["src", "!src/**/__tests__/**", "!src/**/*.test.*"],
+    "entry": ["api", "!api/**/__tests__/**", "!api/**/*.test.*"],
     "splitting": false,
     "sourcemap": true,
     "clean": true
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

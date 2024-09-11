@@ -1,7 +1,7 @@
 FROM node:22.8.0-slim
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /usr/api/app
 
 # Copy package.json and package-lock.json
 COPY package*.json ./
